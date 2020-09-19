@@ -41,14 +41,13 @@ $(document).ready(function () {
    
       var geoLatitude = success.origin.latLng.lat;
       var geoLongitude = success.origin.latLng.lng;
-
+      gymList.empty();
       for (var i = 0; i < 5; i++) {
         var popGymListContiner = $("<ul>");
         var popGymList = $("<li>");
         var gymName = success.searchResults[i].fields.name;
         var gymAddress = success.searchResults[i].fields.address
         var gymPhoneNumber = success.searchResults[i].fields.phone
-        
         popGymList.append(gymName, gymAddress, gymPhoneNumber)
         popGymListContiner.append(popGymList)
         gymList.append(popGymListContiner)
